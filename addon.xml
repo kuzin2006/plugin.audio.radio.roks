@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.example" name="Example Kodi audio Plugin" version="0.0.1" provider-name="curti">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="radioroks.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">http://www.theaudiodb.com/testfiles/</summary>
+        <license>GNU General Public License, v2</license>
+        <description lang="en">Add-on for online audiostreams from http://radioroks.ua/</description>
+        <platform>all</platform>
+    </extension>
+</addon>
