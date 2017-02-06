@@ -5,34 +5,13 @@
 import sys
 import urllib
 import urlparse
+import xbmc
 import xbmcaddon
 import xbmcgui
 import xbmcplugin
 import xml.etree.ElementTree as ET
 
-VERSION = '0.0.1'
-
-#addon       = xbmcaddon.Addon()
-#addonname   = addon.getAddonInfo('name')
-
-#line1 = "Hello World!"
-#line2 = "radioroks plugin"
-#line3 = "OMFG"
-
-#xbmcgui.Dialog().ok(addonname, line1, line2, line3)
-
-# Streams URLs
-# TODO: separate file for these in settings
-#streams = {
-#    'Эфир': 'http://online-radioroks.tavrmedia.ua/RadioROKS',
-#    'AC/DC': 'http://online-radioroks2.tavrmedia.ua/RadioROKS_ACDC',
-#    'Рок-баллады': 'http://online-radioroks2.tavrmedia.ua/RadioROKS_Ballads'
-#}
-
-
-# TODO: settings: language
-lang = 'en'
-low_bitrate = False
+VERSION = '0.0.2'
 
 
 # translate internal Kodi addon/resources/ path to OS path
@@ -49,11 +28,12 @@ def play_song(url):
     # set the path of the song to a list item
     play_item = xbmcgui.ListItem(path=url)
     # the list item is ready to be played by Kodi
+    # TODO: set channel icon in player
     xbmcplugin.setResolvedUrl(addon_handle, True, listitem=play_item)
 
 
 # build playlist
-# TODO: fanart, icons, descriptions
+# TODO: fanart, descriptions
 def parse_channels():
     play_list = []
     tree = ET.parse(os_path('data/channels.xml'))
@@ -63,7 +43,7 @@ def parse_channels():
         # at least one url and english name
         if channel.find('name').find('en').text is not None:
             if channel.find('name').find(lang) is not None:
-                name = channel.find('name').find(lang).text
+                name = channel.find('name').find(lang).text.encode('utf-8')
             else:
                 name = channel.find('name').find('en').text
             if low_bitrate:
@@ -80,12 +60,15 @@ def parse_channels():
                 icon = None
             if icon is None:
                 icon = 'DefaultMusicCompilations.png'
+            else:
+                icon = addon_path + '\\resources\\media\\' + channel.find('icon').text
             # now add ListItem
             # create a list item using the song filename for the label
             li = xbmcgui.ListItem(label=name)
             # TODO: setArt, thumbnails etc.
-            # set the fanart to the albumc cover
+            # set the fanart to the album cover
             # li.setProperty('fanart_image', songs[song]['album_cover'])
+            li.setArt({'icon': icon})
             # set the list item to playable
             li.setProperty('IsPlayable', 'true')
             # build the plugin url for Kodi
@@ -100,7 +83,6 @@ def parse_channels():
 
 
 # parse channels info from settings
-# TODO: take this from addon settings
 def build_playlist():
     play_list = parse_channels()
     # add list to Kodi per Martijn
@@ -117,7 +99,9 @@ mode = args.get('mode', None)
 
 # get settings
 addon = xbmcaddon.Addon()
-low_bitrate = addon.getSetting('low_bitrate')
+addon_path = addon.getAddonInfo('path').decode('utf-8')
+low_bitrate = (False, True)[addon.getSetting('low_bitrate') == 'true']
+lang = xbmc.getLanguage(xbmc.ISO_639_1)
 
 # initial run
 if mode is None:
@@ -127,3 +111,5 @@ if mode is None:
 elif mode[0] == 'stream':
     # pass the url of the song to play_song
     play_song(args['url'][0])
+
+# TODO: language strings
