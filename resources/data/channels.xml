@@ -9,6 +9,10 @@
         <url>http://online-radioroks.tavrmedia.ua/RadioROKS</url>
         <url32>http://online-radioroks.tavrmedia.ua/RadioROKS_32</url32>
         <icon>icon_live.png</icon>
+        <fanart>fanart_live_01.png</fanart>
+        <fanart>fanart_live_02.png</fanart>
+        <fanart>fanart_live_03.png</fanart>
+        <fanart>fanart_live_04.png</fanart>
     </channel>
     <channel>
         <name>
@@ -17,6 +21,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_ACDC</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_ACDC_32</url32>
         <icon>icon_acdc.png</icon>
+        <fanart>fanart_acdc_01.png</fanart>
+        <fanart>fanart_acdc_02.png</fanart>
+        <fanart>fanart_acdc_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -27,6 +34,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_Ballads</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_Ballads_32</url32>
         <icon>icon_ballads.png</icon>
+        <fanart>fanart_ballads_01.png</fanart>
+        <fanart>fanart_ballads_02.png</fanart>
+        <fanart>fanart_ballads_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -35,6 +45,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_Beatles</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_Beatles_32</url32>
         <icon>icon_beatles.png</icon>
+        <fanart>fanart_beatles_01.png</fanart>
+        <fanart>fanart_beatles_02.png</fanart>
+        <fanart>fanart_beatles_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -45,6 +58,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_Concert</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_Concert_32</url32>
         <icon>icon_concert.png</icon>
+        <fanart>fanart_concert_01.png</fanart>
+        <fanart>fanart_concert_02.png</fanart>
+        <fanart>fanart_concert_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -55,6 +71,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_Ukr</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_Ukr_32</url32>
         <icon>icon_uarock.png</icon>
+        <fanart>fanart_ukraine_01.png</fanart>
+        <fanart>fanart_ukraine_02.png</fanart>
+        <fanart>fanart_ukraine_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -63,6 +82,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_HardnHeavy</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_HardnHeavy_32</url32>
         <icon>icon_hardnheavy.png</icon>
+        <fanart>fanart_hardnheavy_01.png</fanart>
+        <fanart>fanart_hardnheavy_02.png</fanart>
+        <fanart>fanart_hardnheavy_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -73,6 +95,10 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_KAMTUGEZA</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_KAMTUGEZA_32</url32>
         <icon>icon_kamtygeza.png</icon>
+        <fanart>fanart_kamtygeza_01.png</fanart>
+        <fanart>fanart_kamtygeza_02.png</fanart>
+        <fanart>fanart_kamtygeza_03.png</fanart>
+        <fanart>fanart_kamtygeza_04.png</fanart>
     </channel>
     <channel>
         <name>
@@ -83,6 +109,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_NewRock</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_NewRock_32</url32>
         <icon>icon_newrock.png</icon>
+        <fanart>fanart_newrock_01.png</fanart>
+        <fanart>fanart_newrock_02.png</fanart>
+        <fanart>fanart_newrock_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -93,6 +122,9 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_OE</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_OE_32</url32>
         <icon>icon_oe.png</icon>
+        <fanart>fanart_oe_01.png</fanart>
+        <fanart>fanart_oe_02.png</fanart>
+        <fanart>fanart_oe_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -101,6 +133,9 @@
         <url>http://roks.ipfm.net:80/RadioROKS_Queen</url>
         <url32>http://roks.ipfm.net:80/RadioROKS_Queen_32</url32>
         <icon>icon_queen.png</icon>
+        <fanart>fanart_queen_01.png</fanart>
+        <fanart>fanart_queen_02.png</fanart>
+        <fanart>fanart_queen_03.png</fanart>
     </channel>
     <channel>
         <name>
@@ -109,5 +144,8 @@
         <url>http://online-radioroks2.tavrmedia.ua/RadioROKS_Scorpions</url>
         <url32>http://online-radioroks2.tavrmedia.ua/RadioROKS_Scorpions_32</url32>
         <icon>icon_scorpions.png</icon>
+        <fanart>fanart_scorpions_01.png</fanart>
+        <fanart>fanart_scorpions_02.png</fanart>
+        <fanart>fanart_scorpions_03.png</fanart>
     </channel>
 </channels>

@@ -1,34 +1,19 @@
 # coding=utf-8
 import xml.etree.ElementTree as ET
+import random
 
 lang = 'en'
 low_bitrate = False
 
-tree = ET.parse('../channels.xml')
+tree = ET.parse('../resources/data/channels.xml')
 channels = tree.getroot()
 
+#print len(channels.findall('channel'))
+print channels.findall('channel')[random.randint(0, len(channels.findall('channel'))-1)].text
+
 for channel in channels.findall('channel'):
-    # check minimum required channel data
-    # at least one url and english name
-    if channel.find('name').find('en').text != '':
-        if channel.find('name').find(lang) is not None:
-            name = channel.find('name').find(lang).text
-        else:
-            name = channel.find('name').find('en').text
-        if low_bitrate:
-            url = channel.find('url32').text
-        else:
-            url = channel.find('url').text
-        # no url - no display
-        if url == '':
-            pass
-        # icon, default if not configured
-        if channel.find('icon') is not None:
-            icon = channel.find('icon').text
-        else:
-            icon = None
-        if icon is None:
-            icon = 'DefaultMusicCompilations.png'
-        # now add ListItem
-        print '%s - %s - %s' % (name, url, icon)
-    else: pass
+    fanarts = channel.findall('fanart')
+    if len(fanarts) > 0:
+        print fanarts[random.randint(0, len(fanarts)-1)].text
+    else:
+        print 'no fanart'
