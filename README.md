@@ -1,8 +1,9 @@
-## ![](http://i.imgur.com/VgAxqNR.png?1) Welcome to the plugin.audio.radio.roks wiki!
+## ![](http://i.imgur.com/VgAxqNR.png?1) Radio ROKS Online add-on
 
 This is the unofficial add-on for [Kodi Media Center](https://kodi.tv/about/), which adds the online radio channels from [Radio ROKS Ukraine](http://www.radioroks.ua/) to your media center.
 
 Compatible (tested) with Kodi versions:
+- v15(Isengard)
 - v16 (Jarvis)
 - v17 (Krypton)
 
