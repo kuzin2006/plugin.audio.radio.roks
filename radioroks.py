@@ -2,6 +2,23 @@
 # Kodi addon for radio Roks online streams
 # developed by E.Kuzin
 
+#  Copyright 2017 Eugene Kuzin
+#
+#  This file is part of the radio.roks Kodi plugin.
+#
+#  This plugin is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This plugin is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this plugin.  If not, see <http://www.gnu.org/licenses/>.
+
 import sys
 import urllib
 import urlparse
@@ -12,13 +29,7 @@ import xbmcplugin
 import xml.etree.ElementTree as ET
 import random
 
-VERSION = '0.0.4'
-
-# Deprecated
-# translate internal Kodi addon/resources/ path to OS path
-# def os_path(filename):
-#    return xbmc.translatePath('special://home/addons/plugin.audio.radio.roks/resources/' + filename)
-
+VERSION = '0.1.0'
 
 def build_url(query):
     base_url = sys.argv[0]
@@ -40,12 +51,10 @@ def parse_channels():
     channels = tree.getroot()
     for channel in channels.findall('channel'):
         # check minimum required channel data
-        # at least one url and english name
-        if channel.find('name').find('en').text is not None:
-            if channel.find('name').find(lang) is not None:
-                name = channel.find('name').find(lang).text.encode('utf-8')
-            else:
-                name = channel.find('name').find('en').text
+        if channel.find('name_id').text is not None:
+            # get localized channel names
+            name_id = int(channel.find('name_id').text)
+            name = addon.getLocalizedString(name_id).encode('utf-8')
             if low_bitrate:
                 url = channel.find('url32').text
             else:
@@ -63,7 +72,6 @@ def parse_channels():
             else:
                 icon = addon_path + '/resources/media/' + channel.find('icon').text
             # now add ListItem
-            # create a list item using the song filename for the label
             li = xbmcgui.ListItem(label=name)
             li.setArt({'icon': icon,
                        'thumb': icon})
@@ -90,7 +98,7 @@ def parse_channels():
 # parse channels info from settings
 def build_playlist():
     play_list = parse_channels()
-    # add list to Kodi per Martijn
+    # add list to Kodi
     xbmcplugin.addDirectoryItems(addon_handle, play_list, len(play_list))
     # set the content of the directory
     xbmcplugin.setContent(addon_handle, 'songs')

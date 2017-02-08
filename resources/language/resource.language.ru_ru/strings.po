@@ -24,3 +24,51 @@ msgctxt "#30001"
 msgid "Low bitrate (Enable for slow internet connection)"
 msgstr "Низкий битрейт (Для медленного интернет-соединения)"
 
+# 30100-30200 reserved for channel names
+msgctxt "#30100"
+msgid "Radio ROKS Live"
+msgstr "Эфир Радио РОКС"
+
+msgctxt "#30101"
+msgid "AC/DC"
+msgstr ""
+
+msgctxt "#30102"
+msgid "Rock Ballads"
+msgstr "Рок-баллады"
+
+msgctxt "#30103"
+msgid "Beatles"
+msgstr ""
+
+msgctxt "#30104"
+msgid "Rock Concert"
+msgstr "Рок-концерт"
+
+msgctxt "#30105"
+msgid "Ukrainian Rock"
+msgstr "Украинский рок"
+
+msgctxt "#30106"
+msgid "Hard'n'Heavy"
+msgstr ""
+
+msgctxt "#30107"
+msgid "[KAMTYGEZA]"
+msgstr "[КАМТУГЕЗА]"
+
+msgctxt "#30108"
+msgid "New Rock"
+msgstr "Новый рок"
+
+msgctxt "#30109"
+msgid "Okean Elzy"
+msgstr "Океан Эльзы"
+
+msgctxt "#30110"
+msgid "Queen"
+msgstr ""
+
+msgctxt "#30111"
+msgid "Scorpions"
+msgstr ""
