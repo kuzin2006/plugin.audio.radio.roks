@@ -12,7 +12,7 @@ import xbmcplugin
 import xml.etree.ElementTree as ET
 import random
 
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 
 # Deprecated
 # translate internal Kodi addon/resources/ path to OS path
@@ -36,7 +36,7 @@ def play_song(url, icon):
 # build playlist
 def parse_channels():
     play_list = []
-    tree = ET.parse(addon_path + '\\resources\\data\\channels.xml')
+    tree = ET.parse(addon_path + '/resources/data/channels.xml')
     channels = tree.getroot()
     for channel in channels.findall('channel'):
         # check minimum required channel data
@@ -61,7 +61,7 @@ def parse_channels():
             if icon is None:
                 icon = 'DefaultMusicCompilations.png'
             else:
-                icon = addon_path + '\\resources\\media\\' + channel.find('icon').text
+                icon = addon_path + '/resources/media/' + channel.find('icon').text
             # now add ListItem
             # create a list item using the song filename for the label
             li = xbmcgui.ListItem(label=name)
@@ -71,9 +71,9 @@ def parse_channels():
             fanarts = channel.findall('fanart')
             if len(fanarts) > 0:
                 fanart_file = fanarts[random.randint(0, len(fanarts)-1)].text
-                li.setArt({'fanart': addon_path + '\\resources\\media\\' + fanart_file})
+                li.setArt({'fanart': addon_path + '/resources/media/' + fanart_file})
             else:
-                li.setArt({'fanart': addon_path + '\\fanart.jpg'})
+                li.setArt({'fanart': addon_path + '/fanart.jpg'})
             # set Info
             li.setInfo('music', {'genre': 'Rock', 'artist': name, 'title': 'Online Stream'})
             # set the list item to playable
