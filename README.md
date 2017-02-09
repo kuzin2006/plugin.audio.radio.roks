@@ -16,5 +16,7 @@ Compatible (tested) with Kodi versions:
 5. Locate Radio Roks online, install.
 6. Enjoy!
 
+You may also download and install add-on manually. See [Downloads page](https://github.com/kuzin2006/plugin.audio.radio.roks/wiki/Downloads) for direct link.
+
 See [Screenshots](https://github.com/kuzin2006/plugin.audio.radio.roks/wiki/Screenshots) page for more:
 ![](http://i.imgur.com/1O5iIBU.png)
