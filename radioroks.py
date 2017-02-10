@@ -19,6 +19,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this plugin.  If not, see <http://www.gnu.org/licenses/>.
 
+import os
 import sys
 import urllib
 import urlparse
@@ -29,7 +30,8 @@ import xbmcplugin
 import xml.etree.ElementTree as ET
 import random
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
+
 
 def build_url(query):
     base_url = sys.argv[0]
@@ -47,7 +49,8 @@ def play_song(url, icon):
 # build playlist
 def parse_channels():
     play_list = []
-    tree = ET.parse(addon_path + '/resources/data/channels.xml')
+    channels_path = os.path.join(addon_path, 'resources', 'data', 'channels.xml')
+    tree = ET.parse(channels_path)
     channels = tree.getroot()
     for channel in channels.findall('channel'):
         # check minimum required channel data
@@ -70,7 +73,7 @@ def parse_channels():
             if icon is None:
                 icon = 'DefaultMusicCompilations.png'
             else:
-                icon = addon_path + '/resources/media/' + channel.find('icon').text
+                icon = os.path.join(addon_path, 'resources', 'media', channel.find('icon').text)
             # now add ListItem
             li = xbmcgui.ListItem(label=name)
             li.setArt({'icon': icon,
@@ -79,9 +82,10 @@ def parse_channels():
             fanarts = channel.findall('fanart')
             if len(fanarts) > 0:
                 fanart_file = fanarts[random.randint(0, len(fanarts)-1)].text
-                li.setArt({'fanart': addon_path + '/resources/media/' + fanart_file})
+                fanart_path = os.path.join(addon_path, 'resources', 'media', fanart_file)
             else:
-                li.setArt({'fanart': addon_path + '/fanart.jpg'})
+                fanart_path = os.path.join(addon_path, 'fanart.jpg')
+            li.setArt({'fanart': fanart_path})
             # set Info
             li.setInfo('music', {'genre': 'Rock', 'artist': name, 'title': 'Online Stream'})
             # set the list item to playable
