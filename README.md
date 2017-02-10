@@ -9,6 +9,10 @@ Compatible (tested) with Kodi versions:
 
 ### Setup instructions:
 
+Addon is available in [Official Kodi Add-on Repository](http://addons.kodi.tv/show/plugin.audio.radio.roks/): go to Add-ons -> Music add-ons -> Radio Roks online
+
+or install it from unofficial repository:
+
 1. [Download Repository add-on](https://raw.githubusercontent.com/kuzin2006/kodi_repo/master/addons/repository.kuzin2006/repository.kuzin2006-0.0.2.zip)
 2. In your Kodi: Go to System -> Settings -> Add-ons -> Install from zip file
 3. Locate downloaded zip file, press OK.
